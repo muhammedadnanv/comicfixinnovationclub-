@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicFix Innovators' Hub (CIH) Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; }
+        .container { max-width: 400px; margin: 40px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; margin-bottom: 20px; }
+        form { display: flex; flex-direction: column; }
+        label { margin-bottom: 10px; }
+        input, select, textarea { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        button[type="submit"] { background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button[type="submit"]:hover { background-color: #3e8e41; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Join ComicFix Innovators' Hub (CIH)</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="school">School Name:</label>
+            <input type="text" id="school" name="school" required>
+            <label for="grade">Grade (9-12):</label>
+            <select id="grade" name="grade" required>
+                <option value="">Select Grade</option>
+                <option value="9">9th Grade</option>
+                <option value="10">10th Grade</option>
+                <option value="11">11th Grade</option>
+                <option value="12">12th Grade</option>
+            </select>
+            <label for="interests">Tech Interests:</label>
+            <textarea id="interests" name="interests" required></textarea>
+            <button type="submit" onclick="sendWhatsAppMessage()">Register</button>
+        </form>
+    </div>
+    <script>
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const school = document.getElementById('school').value;
+            const grade = document.getElementById('grade').value;
+            const interests = document.getElementById('interests').value;
+            
+            const message = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchool: ${school}\nGrade: ${grade}\nInterests: ${interests}`;
+            
+            const url = `(link unavailable){encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
